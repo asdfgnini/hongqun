@@ -1,0 +1,13 @@
+zjth7\lv_tlsf.o: ..\LVGL\src\misc\lv_tlsf.c
+zjth7\lv_tlsf.o: ..\LVGL\src\misc\../lv_conf_internal.h
+zjth7\lv_tlsf.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+zjth7\lv_tlsf.o: ..\LVGL\src\misc\../lv_conf_kconfig.h
+zjth7\lv_tlsf.o: ..\LVGL\examples\porting\../../lv_conf.h
+zjth7\lv_tlsf.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\limits.h
+zjth7\lv_tlsf.o: ..\LVGL\src\misc\lv_tlsf.h
+zjth7\lv_tlsf.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stddef.h
+zjth7\lv_tlsf.o: ..\LVGL\src\misc\lv_mem.h
+zjth7\lv_tlsf.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\string.h
+zjth7\lv_tlsf.o: ..\LVGL\src\misc\lv_types.h
+zjth7\lv_tlsf.o: ..\LVGL\src\misc\lv_log.h
+zjth7\lv_tlsf.o: ..\LVGL\src\misc\lv_assert.h

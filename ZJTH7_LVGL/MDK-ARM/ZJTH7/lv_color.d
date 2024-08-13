@@ -1,0 +1,13 @@
+zjth7\lv_color.o: ..\LVGL\src\misc\lv_color.c
+zjth7\lv_color.o: ..\LVGL\src\misc\lv_color.h
+zjth7\lv_color.o: ..\LVGL\src\misc\../lv_conf_internal.h
+zjth7\lv_color.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+zjth7\lv_color.o: ..\LVGL\src\misc\../lv_conf_kconfig.h
+zjth7\lv_color.o: ..\LVGL\examples\porting\../../lv_conf.h
+zjth7\lv_color.o: ..\LVGL\src\misc\lv_assert.h
+zjth7\lv_color.o: ..\LVGL\src\misc\lv_log.h
+zjth7\lv_color.o: ..\LVGL\src\misc\lv_types.h
+zjth7\lv_color.o: ..\LVGL\src\misc\lv_mem.h
+zjth7\lv_color.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stddef.h
+zjth7\lv_color.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\string.h
+zjth7\lv_color.o: ..\LVGL\src\misc\lv_math.h

@@ -1,0 +1,11 @@
+zjth7\lv_ll.o: ..\LVGL\src\misc\lv_ll.c
+zjth7\lv_ll.o: ..\LVGL\src\misc\lv_ll.h
+zjth7\lv_ll.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+zjth7\lv_ll.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stddef.h
+zjth7\lv_ll.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+zjth7\lv_ll.o: ..\LVGL\src\misc\lv_mem.h
+zjth7\lv_ll.o: ..\LVGL\src\misc\../lv_conf_internal.h
+zjth7\lv_ll.o: ..\LVGL\src\misc\../lv_conf_kconfig.h
+zjth7\lv_ll.o: ..\LVGL\examples\porting\../../lv_conf.h
+zjth7\lv_ll.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\string.h
+zjth7\lv_ll.o: ..\LVGL\src\misc\lv_types.h

@@ -1,0 +1,15 @@
+zjth7\event_groups.o: ..\FreeRTOS\event_groups.c
+zjth7\event_groups.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stdlib.h
+zjth7\event_groups.o: ..\FreeRTOS\include\FreeRTOS.h
+zjth7\event_groups.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stddef.h
+zjth7\event_groups.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+zjth7\event_groups.o: ..\FreeRTOS\FreeRTOSConfig.h
+zjth7\event_groups.o: ..\FreeRTOS\include\projdefs.h
+zjth7\event_groups.o: ..\FreeRTOS\include\portable.h
+zjth7\event_groups.o: ..\FreeRTOS\include\deprecated_definitions.h
+zjth7\event_groups.o: ..\FreeRTOS\portable\RVDS\ARM_CM7\r0p1\portmacro.h
+zjth7\event_groups.o: ..\FreeRTOS\include\mpu_wrappers.h
+zjth7\event_groups.o: ..\FreeRTOS\include\task.h
+zjth7\event_groups.o: ..\FreeRTOS\include\list.h
+zjth7\event_groups.o: ..\FreeRTOS\include\timers.h
+zjth7\event_groups.o: ..\FreeRTOS\include\event_groups.h

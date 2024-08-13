@@ -1,0 +1,17 @@
+zjth7\lv_bidi.o: ..\LVGL\src\misc\lv_bidi.c
+zjth7\lv_bidi.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stddef.h
+zjth7\lv_bidi.o: ..\LVGL\src\misc\lv_bidi.h
+zjth7\lv_bidi.o: ..\LVGL\src\misc\../lv_conf_internal.h
+zjth7\lv_bidi.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+zjth7\lv_bidi.o: ..\LVGL\src\misc\../lv_conf_kconfig.h
+zjth7\lv_bidi.o: ..\LVGL\examples\porting\../../lv_conf.h
+zjth7\lv_bidi.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+zjth7\lv_bidi.o: ..\LVGL\src\misc\lv_txt.h
+zjth7\lv_bidi.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\stdarg.h
+zjth7\lv_bidi.o: ..\LVGL\src\misc\lv_area.h
+zjth7\lv_bidi.o: ..\LVGL\src\misc\../font/lv_font.h
+zjth7\lv_bidi.o: ..\LVGL\src\misc\../font/lv_symbol_def.h
+zjth7\lv_bidi.o: ..\LVGL\src\misc\lv_printf.h
+zjth7\lv_bidi.o: ..\LVGL\src\misc\lv_types.h
+zjth7\lv_bidi.o: ..\LVGL\src\misc\../misc/lv_mem.h
+zjth7\lv_bidi.o: D:\ruanjian\MDK\ARM\ARMCC\Bin\..\include\string.h
