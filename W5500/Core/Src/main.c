@@ -29,7 +29,7 @@ int main(void)
 	uint8_t _data;
 	while (1)
 	{
-		if(1)
+		if(0)
 		{
 			if(comGetChar(COM3,&_data))//æ»æ»Œ“
 			{

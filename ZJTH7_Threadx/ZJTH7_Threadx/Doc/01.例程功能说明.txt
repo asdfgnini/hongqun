@@ -1,0 +1,53 @@
+/*
+*********************************************************************************************************
+*	                                  
+*	版    本 : V1.0
+*	说    明 : ThreadX任务管理
+*              实验目的：
+*                1. 学习ThreadX任务管理。              
+*              实验内容：
+*                1. 共创建了如下几个任务，通过按下按键K1可以通过串口或RTT打印任务堆栈使用情况
+*                    ===============================================================
+*                      OS CPU Usage =  1.94%
+*                    ===============================================================
+*                       Prio StackSize CurStack MaxStack Taskname
+*                        2     4092      383      391    App Task Start
+*                        3     4092      543      659    App Msp Pro
+*                        4     4092      391      391    App Task UserIF
+*                        5     4092      543      659    App Task COM
+*                       30     1020      519      519    App Task STAT
+*                       31     1020      143       71    App Task IDLE
+*                        0     1020      391      391    System Timer Thread                
+*                    串口软件可以使用SecureCRT或者H7-TOOL RTT查看打印信息。
+*                    App Task Start任务  ：启动任务，这里用作BSP驱动包处理。
+*                    App Task MspPro任务 ：消息处理，这里未使用。
+*                    App Task UserIF任务 ：按键消息处理。
+*                    App Task COM任务    ：这里用作LED闪烁。
+*                    App Task STAT任务   ：统计任务
+*                    App Task IDLE任务   ：空闲任务
+*                    System Timer Thread任务：系统定时器任务
+*                2. (1) 凡是用到printf函数的全部通过函数App_Printf实现。
+*                   (2) App_Printf函数做了信号量的互斥操作，解决资源共享问题。
+*                3. 默认上电是通过串口打印信息，如果使用RTT打印信息
+*                   (1) MDK AC5，MDK AC6或IAR通过使能bsp.h文件中的宏定义为1即可
+*                       #define Enable_RTTViewer  1
+*                   (2) Embedded Studio继续使用此宏定义为0, 因为Embedded Studio仅制作了调试状态RTT方式查看。
+*              实验操作：   
+*                1. K1按键按下打印任务执行情况。
+*                2. K2按键按下挂起任务App Task COM。
+*                3. K3按键按下恢复任务App Task COM。
+*                4. 摇杆OK按键按下复位任务App Task COM。
+*              注意事项：
+*                1. 本实验的串口软件可以使用SecureCRT或者H7-TOOL RTT查看打印信息。
+*                2. 务必将编辑器的缩进参数和TAB设置为4来阅读本文件，要不代码显示不整齐。
+*
+*	修改记录 :
+*		版本号   日期         作者            说明
+*       V1.0    2021-04-18   Eric2013    1. ST固件库1.9.0版本
+*                                        2. BSP驱动包V1.2
+*                                        3. ThreadX版本V6.0.1
+*                                       
+*	Copyright (C), 2021-2030, 安富莱电子 www.armfly.com
+*
+*********************************************************************************************************
+*/
