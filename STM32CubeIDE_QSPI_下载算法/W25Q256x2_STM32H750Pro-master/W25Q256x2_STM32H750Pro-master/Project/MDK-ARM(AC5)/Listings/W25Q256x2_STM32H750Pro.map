@@ -1,0 +1,682 @@
+Component: ARM Compiler 5.06 update 7 (build 960) Tool: armlink [4d3601]
+
+==============================================================================
+
+Section Cross References
+
+    loader_src.o(.text) refers to stm32h7xx_hal.o(.text) for HAL_Init
+    loader_src.o(.text) refers to system_stm32h7xx.o(.text) for SystemInit
+    loader_src.o(.text) refers to bsp.o(.text) for SystemClock_Config
+    loader_src.o(.text) refers to qspi.o(.text) for MX_QUADSPI_Init
+    loader_src.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    loader_src.o(.text) refers to stm32h7xx_hal_gpio.o(.text) for HAL_GPIO_Init
+    loader_src.o(.text) refers to qspi.o(.bss) for hqspi
+    bsp.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    bsp.o(.text) refers to stm32h7xx_hal_pwr_ex.o(.text) for HAL_PWREx_ConfigSupply
+    bsp.o(.text) refers to stm32h7xx_hal_rcc.o(.text) for HAL_RCC_OscConfig
+    bsp.o(.text) refers to qspi.o(.text) for Error_Handler
+    qspi.o(.text) refers to stm32h7xx_hal_qspi.o(.text) for HAL_QSPI_DeInit
+    qspi.o(.text) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
+    qspi.o(.text) refers to stm32h7xx_hal_rcc_ex.o(.text) for HAL_RCCEx_PeriphCLKConfig
+    qspi.o(.text) refers to stm32h7xx_hal_gpio.o(.text) for HAL_GPIO_Init
+    qspi.o(.text) refers to stm32h7xx_hal_cortex.o(.text) for HAL_NVIC_SetPriority
+    qspi.o(.text) refers to qspi.o(.bss) for hqspi
+    stm32h7xx_hal.o(.text) refers to stm32h7xx_hal_cortex.o(.text) for HAL_SYSTICK_Config
+    stm32h7xx_hal.o(.text) refers to stm32h7xx_hal_rcc.o(.text) for HAL_RCC_GetSysClockFreq
+    stm32h7xx_hal.o(.text) refers to bsp.o(.text) for HAL_InitTick
+    stm32h7xx_hal.o(.text) refers to qspi.o(.text) for assert_failed
+    stm32h7xx_hal.o(.text) refers to stm32h7xx_hal.o(.data) for uwTickFreq
+    stm32h7xx_hal.o(.text) refers to system_stm32h7xx.o(.data) for SystemCoreClock
+    stm32h7xx_hal.o(.text) refers to system_stm32h7xx.o(.constdata) for D1CorePrescTable
+    stm32h7xx_hal_cortex.o(.text) refers to qspi.o(.text) for assert_failed
+    stm32h7xx_hal_gpio.o(.text) refers to qspi.o(.text) for assert_failed
+    stm32h7xx_hal_qspi.o(.text) refers to stm32h7xx_hal.o(.text) for HAL_GetTick
+    stm32h7xx_hal_qspi.o(.text) refers to qspi.o(.text) for assert_failed
+    stm32h7xx_hal_rcc.o(.text) refers to stm32h7xx_hal.o(.text) for HAL_GetTick
+    stm32h7xx_hal_rcc.o(.text) refers to bsp.o(.text) for HAL_InitTick
+    stm32h7xx_hal_rcc.o(.text) refers to qspi.o(.text) for assert_failed
+    stm32h7xx_hal_rcc.o(.text) refers to system_stm32h7xx.o(.data) for SystemCoreClock
+    stm32h7xx_hal_rcc.o(.text) refers to stm32h7xx_hal.o(.data) for uwTickPrio
+    stm32h7xx_hal_rcc.o(.text) refers to system_stm32h7xx.o(.constdata) for D1CorePrescTable
+    stm32h7xx_hal_rcc.o(.text) refers to stm32h7xx_hal_gpio.o(.text) for HAL_GPIO_Init
+    stm32h7xx_hal_rcc_ex.o(.text) refers to qspi.o(.text) for assert_failed
+    stm32h7xx_hal_rcc_ex.o(.text) refers to stm32h7xx_hal.o(.text) for HAL_GetTick
+    stm32h7xx_hal_rcc_ex.o(.text) refers to stm32h7xx_hal_rcc.o(.text) for HAL_RCC_GetHCLKFreq
+    stm32h7xx_hal_rcc_ex.o(.text) refers to system_stm32h7xx.o(.constdata) for D1CorePrescTable
+    stm32h7xx_hal_rcc_ex.o(.text) refers to system_stm32h7xx.o(.data) for SystemD2Clock
+    stm32h7xx_hal_mdma.o(.text) refers to stm32h7xx_hal.o(.text) for HAL_GetTick
+    stm32h7xx_hal_mdma.o(.text) refers to qspi.o(.text) for assert_failed
+    stm32h7xx_hal_mdma.o(.text) refers to system_stm32h7xx.o(.data) for SystemCoreClock
+    stm32h7xx_hal_pwr_ex.o(.text) refers to qspi.o(.text) for assert_failed
+    stm32h7xx_hal_pwr_ex.o(.text) refers to stm32h7xx_hal.o(.text) for HAL_GetTick
+    stm32h7xx_hal_pwr_ex.o(.text) refers to stm32h7xx_hal_pwr.o(.text) for HAL_PWR_PVDCallback
+    stm32h7xx_hal_pwr.o(.text) refers to qspi.o(.text) for assert_failed
+    system_stm32h7xx.o(.text) refers to system_stm32h7xx.o(.constdata) for D1CorePrescTable
+    system_stm32h7xx.o(.text) refers to system_stm32h7xx.o(.data) for SystemD2Clock
+
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memclr_w.o ABSOLUTE
+    ..\..\Libraries\CMSIS\Device\ST\STM32H7xx\Source\Templates\system_stm32h7xx.c 0x00000000   Number         0  system_stm32h7xx.o ABSOLUTE
+    ..\..\Libraries\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal.c 0x00000000   Number         0  stm32h7xx_hal.o ABSOLUTE
+    ..\..\Libraries\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_cortex.c 0x00000000   Number         0  stm32h7xx_hal_cortex.o ABSOLUTE
+    ..\..\Libraries\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_gpio.c 0x00000000   Number         0  stm32h7xx_hal_gpio.o ABSOLUTE
+    ..\..\Libraries\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_mdma.c 0x00000000   Number         0  stm32h7xx_hal_mdma.o ABSOLUTE
+    ..\..\Libraries\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr.c 0x00000000   Number         0  stm32h7xx_hal_pwr.o ABSOLUTE
+    ..\..\Libraries\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr_ex.c 0x00000000   Number         0  stm32h7xx_hal_pwr_ex.o ABSOLUTE
+    ..\..\Libraries\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_qspi.c 0x00000000   Number         0  stm32h7xx_hal_qspi.o ABSOLUTE
+    ..\..\Libraries\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc.c 0x00000000   Number         0  stm32h7xx_hal_rcc.o ABSOLUTE
+    ..\..\Libraries\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc_ex.c 0x00000000   Number         0  stm32h7xx_hal_rcc_ex.o ABSOLUTE
+    ..\..\User\Dev_Inf.c                     0x00000000   Number         0  dev_inf.o ABSOLUTE
+    ..\..\User\Loader_Src.c                  0x00000000   Number         0  loader_src.o ABSOLUTE
+    ..\..\User\bsp\bsp.c                     0x00000000   Number         0  bsp.o ABSOLUTE
+    ..\..\User\bsp\src\qspi.c                0x00000000   Number         0  qspi.o ABSOLUTE
+    ..\\..\\Libraries\\CMSIS\\Device\\ST\\STM32H7xx\\Source\\Templates\\system_stm32h7xx.c 0x00000000   Number         0  system_stm32h7xx.o ABSOLUTE
+    ..\\..\\Libraries\\STM32H7xx_HAL_Driver\\Src\\stm32h7xx_hal.c 0x00000000   Number         0  stm32h7xx_hal.o ABSOLUTE
+    ..\\..\\Libraries\\STM32H7xx_HAL_Driver\\Src\\stm32h7xx_hal_cortex.c 0x00000000   Number         0  stm32h7xx_hal_cortex.o ABSOLUTE
+    ..\\..\\Libraries\\STM32H7xx_HAL_Driver\\Src\\stm32h7xx_hal_gpio.c 0x00000000   Number         0  stm32h7xx_hal_gpio.o ABSOLUTE
+    ..\\..\\Libraries\\STM32H7xx_HAL_Driver\\Src\\stm32h7xx_hal_mdma.c 0x00000000   Number         0  stm32h7xx_hal_mdma.o ABSOLUTE
+    ..\\..\\Libraries\\STM32H7xx_HAL_Driver\\Src\\stm32h7xx_hal_pwr.c 0x00000000   Number         0  stm32h7xx_hal_pwr.o ABSOLUTE
+    ..\\..\\Libraries\\STM32H7xx_HAL_Driver\\Src\\stm32h7xx_hal_pwr_ex.c 0x00000000   Number         0  stm32h7xx_hal_pwr_ex.o ABSOLUTE
+    ..\\..\\Libraries\\STM32H7xx_HAL_Driver\\Src\\stm32h7xx_hal_qspi.c 0x00000000   Number         0  stm32h7xx_hal_qspi.o ABSOLUTE
+    ..\\..\\Libraries\\STM32H7xx_HAL_Driver\\Src\\stm32h7xx_hal_rcc.c 0x00000000   Number         0  stm32h7xx_hal_rcc.o ABSOLUTE
+    ..\\..\\Libraries\\STM32H7xx_HAL_Driver\\Src\\stm32h7xx_hal_rcc_ex.c 0x00000000   Number         0  stm32h7xx_hal_rcc_ex.o ABSOLUTE
+    ..\\..\\User\\Loader_Src.c               0x00000000   Number         0  loader_src.o ABSOLUTE
+    ..\\..\\User\\bsp\\bsp.c                 0x00000000   Number         0  bsp.o ABSOLUTE
+    ..\\..\\User\\bsp\\src\\qspi.c           0x00000000   Number         0  qspi.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    .rev16_text                              0x24000004   Section        4  loader_src.o(.rev16_text)
+    $v0                                      0x24000004   Number         0  loader_src.o(.rev16_text)
+    .rev16_text                              0x24000008   Section        4  bsp.o(.rev16_text)
+    $v0                                      0x24000008   Number         0  bsp.o(.rev16_text)
+    .rev16_text                              0x2400000c   Section        4  qspi.o(.rev16_text)
+    $v0                                      0x2400000c   Number         0  qspi.o(.rev16_text)
+    .rev16_text                              0x24000010   Section        4  stm32h7xx_hal.o(.rev16_text)
+    $v0                                      0x24000010   Number         0  stm32h7xx_hal.o(.rev16_text)
+    .rev16_text                              0x24000014   Section        4  stm32h7xx_hal_cortex.o(.rev16_text)
+    $v0                                      0x24000014   Number         0  stm32h7xx_hal_cortex.o(.rev16_text)
+    .rev16_text                              0x24000018   Section        4  stm32h7xx_hal_gpio.o(.rev16_text)
+    $v0                                      0x24000018   Number         0  stm32h7xx_hal_gpio.o(.rev16_text)
+    .rev16_text                              0x2400001c   Section        4  stm32h7xx_hal_qspi.o(.rev16_text)
+    $v0                                      0x2400001c   Number         0  stm32h7xx_hal_qspi.o(.rev16_text)
+    .rev16_text                              0x24000020   Section        4  stm32h7xx_hal_rcc.o(.rev16_text)
+    $v0                                      0x24000020   Number         0  stm32h7xx_hal_rcc.o(.rev16_text)
+    .rev16_text                              0x24000024   Section        4  stm32h7xx_hal_rcc_ex.o(.rev16_text)
+    $v0                                      0x24000024   Number         0  stm32h7xx_hal_rcc_ex.o(.rev16_text)
+    .rev16_text                              0x24000028   Section        4  stm32h7xx_hal_mdma.o(.rev16_text)
+    $v0                                      0x24000028   Number         0  stm32h7xx_hal_mdma.o(.rev16_text)
+    .rev16_text                              0x2400002c   Section        4  stm32h7xx_hal_pwr_ex.o(.rev16_text)
+    $v0                                      0x2400002c   Number         0  stm32h7xx_hal_pwr_ex.o(.rev16_text)
+    .rev16_text                              0x24000030   Section        4  stm32h7xx_hal_pwr.o(.rev16_text)
+    $v0                                      0x24000030   Number         0  stm32h7xx_hal_pwr.o(.rev16_text)
+    .rev16_text                              0x24000034   Section        4  system_stm32h7xx.o(.rev16_text)
+    $v0                                      0x24000034   Number         0  system_stm32h7xx.o(.rev16_text)
+    .revsh_text                              0x24000038   Section        4  loader_src.o(.revsh_text)
+    $v0                                      0x24000038   Number         0  loader_src.o(.revsh_text)
+    .revsh_text                              0x2400003c   Section        4  bsp.o(.revsh_text)
+    $v0                                      0x2400003c   Number         0  bsp.o(.revsh_text)
+    .revsh_text                              0x24000040   Section        4  qspi.o(.revsh_text)
+    $v0                                      0x24000040   Number         0  qspi.o(.revsh_text)
+    .revsh_text                              0x24000044   Section        4  stm32h7xx_hal.o(.revsh_text)
+    $v0                                      0x24000044   Number         0  stm32h7xx_hal.o(.revsh_text)
+    .revsh_text                              0x24000048   Section        4  stm32h7xx_hal_cortex.o(.revsh_text)
+    $v0                                      0x24000048   Number         0  stm32h7xx_hal_cortex.o(.revsh_text)
+    .revsh_text                              0x2400004c   Section        4  stm32h7xx_hal_gpio.o(.revsh_text)
+    $v0                                      0x2400004c   Number         0  stm32h7xx_hal_gpio.o(.revsh_text)
+    .revsh_text                              0x24000050   Section        4  stm32h7xx_hal_qspi.o(.revsh_text)
+    $v0                                      0x24000050   Number         0  stm32h7xx_hal_qspi.o(.revsh_text)
+    .revsh_text                              0x24000054   Section        4  stm32h7xx_hal_rcc.o(.revsh_text)
+    $v0                                      0x24000054   Number         0  stm32h7xx_hal_rcc.o(.revsh_text)
+    .revsh_text                              0x24000058   Section        4  stm32h7xx_hal_rcc_ex.o(.revsh_text)
+    $v0                                      0x24000058   Number         0  stm32h7xx_hal_rcc_ex.o(.revsh_text)
+    .revsh_text                              0x2400005c   Section        4  stm32h7xx_hal_mdma.o(.revsh_text)
+    $v0                                      0x2400005c   Number         0  stm32h7xx_hal_mdma.o(.revsh_text)
+    .revsh_text                              0x24000060   Section        4  stm32h7xx_hal_pwr_ex.o(.revsh_text)
+    $v0                                      0x24000060   Number         0  stm32h7xx_hal_pwr_ex.o(.revsh_text)
+    .revsh_text                              0x24000064   Section        4  stm32h7xx_hal_pwr.o(.revsh_text)
+    $v0                                      0x24000064   Number         0  stm32h7xx_hal_pwr.o(.revsh_text)
+    .revsh_text                              0x24000068   Section        4  system_stm32h7xx.o(.revsh_text)
+    $v0                                      0x24000068   Number         0  system_stm32h7xx.o(.revsh_text)
+    .rrx_text                                0x2400006c   Section        6  loader_src.o(.rrx_text)
+    $v0                                      0x2400006c   Number         0  loader_src.o(.rrx_text)
+    .rrx_text                                0x24000074   Section        6  bsp.o(.rrx_text)
+    $v0                                      0x24000074   Number         0  bsp.o(.rrx_text)
+    .rrx_text                                0x2400007c   Section        6  qspi.o(.rrx_text)
+    $v0                                      0x2400007c   Number         0  qspi.o(.rrx_text)
+    .rrx_text                                0x24000084   Section        6  stm32h7xx_hal.o(.rrx_text)
+    $v0                                      0x24000084   Number         0  stm32h7xx_hal.o(.rrx_text)
+    .rrx_text                                0x2400008c   Section        6  stm32h7xx_hal_cortex.o(.rrx_text)
+    $v0                                      0x2400008c   Number         0  stm32h7xx_hal_cortex.o(.rrx_text)
+    .rrx_text                                0x24000094   Section        6  stm32h7xx_hal_gpio.o(.rrx_text)
+    $v0                                      0x24000094   Number         0  stm32h7xx_hal_gpio.o(.rrx_text)
+    .rrx_text                                0x2400009c   Section        6  stm32h7xx_hal_qspi.o(.rrx_text)
+    $v0                                      0x2400009c   Number         0  stm32h7xx_hal_qspi.o(.rrx_text)
+    .rrx_text                                0x240000a4   Section        6  stm32h7xx_hal_rcc.o(.rrx_text)
+    $v0                                      0x240000a4   Number         0  stm32h7xx_hal_rcc.o(.rrx_text)
+    .rrx_text                                0x240000ac   Section        6  stm32h7xx_hal_rcc_ex.o(.rrx_text)
+    $v0                                      0x240000ac   Number         0  stm32h7xx_hal_rcc_ex.o(.rrx_text)
+    .rrx_text                                0x240000b4   Section        6  stm32h7xx_hal_mdma.o(.rrx_text)
+    $v0                                      0x240000b4   Number         0  stm32h7xx_hal_mdma.o(.rrx_text)
+    .rrx_text                                0x240000bc   Section        6  stm32h7xx_hal_pwr_ex.o(.rrx_text)
+    $v0                                      0x240000bc   Number         0  stm32h7xx_hal_pwr_ex.o(.rrx_text)
+    .rrx_text                                0x240000c4   Section        6  stm32h7xx_hal_pwr.o(.rrx_text)
+    $v0                                      0x240000c4   Number         0  stm32h7xx_hal_pwr.o(.rrx_text)
+    .rrx_text                                0x240000cc   Section        6  system_stm32h7xx.o(.rrx_text)
+    $v0                                      0x240000cc   Number         0  system_stm32h7xx.o(.rrx_text)
+    .text                                    0x240000d4   Section        0  loader_src.o(.text)
+    .text                                    0x24000288   Section        0  bsp.o(.text)
+    .text                                    0x24000344   Section        0  qspi.o(.text)
+    QSPI_AutoPollingMemReady                 0x240005c9   Thumb Code    86  qspi.o(.text)
+    QSPI_WriteEnable                         0x240006c7   Thumb Code   146  qspi.o(.text)
+    QSPI_ResetMemory                         0x240007a3   Thumb Code    94  qspi.o(.text)
+    .text                                    0x24000e34   Section        0  stm32h7xx_hal.o(.text)
+    .text                                    0x24001a8c   Section        0  stm32h7xx_hal_cortex.o(.text)
+    __NVIC_SetPriority                       0x24001a8d   Thumb Code    32  stm32h7xx_hal_cortex.o(.text)
+    __NVIC_GetPriorityGrouping               0x24002119   Thumb Code    12  stm32h7xx_hal_cortex.o(.text)
+    .text                                    0x24002134   Section        0  stm32h7xx_hal_gpio.o(.text)
+    .text                                    0x24002820   Section        0  stm32h7xx_hal_qspi.o(.text)
+    QSPI_WaitFlagStateUntilTimeout           0x24002821   Thumb Code    30  stm32h7xx_hal_qspi.o(.text)
+    QSPI_Config                              0x24002a03   Thumb Code   526  stm32h7xx_hal_qspi.o(.text)
+    .text                                    0x24003c18   Section        0  stm32h7xx_hal_rcc.o(.text)
+    .text                                    0x2400557c   Section        0  stm32h7xx_hal_rcc_ex.o(.text)
+    RCCEx_PLL3_Config                        0x2400557d   Thumb Code   556  stm32h7xx_hal_rcc_ex.o(.text)
+    RCCEx_PLL2_Config                        0x240057a9   Thumb Code   612  stm32h7xx_hal_rcc_ex.o(.text)
+    .text                                    0x24007f28   Section        0  stm32h7xx_hal_mdma.o(.text)
+    MDMA_Init                                0x24007f29   Thumb Code   196  stm32h7xx_hal_mdma.o(.text)
+    MDMA_SetConfig                           0x24008bb5   Thumb Code   130  stm32h7xx_hal_mdma.o(.text)
+    .text                                    0x24009220   Section        0  stm32h7xx_hal_pwr_ex.o(.text)
+    .text                                    0x24009c58   Section        0  stm32h7xx_hal_pwr.o(.text)
+    .text                                    0x2400a068   Section        0  system_stm32h7xx.o(.text)
+    .text                                    0x2400a37c   Section       78  rt_memclr_w.o(.text)
+    .constdata                               0x2400a3ca   Section       16  system_stm32h7xx.o(.constdata)
+    .data                                    0x2400a3e0   Section        9  stm32h7xx_hal.o(.data)
+    .data                                    0x2400a3ec   Section        8  system_stm32h7xx.o(.data)
+    .bss                                     0x2400a3f4   Section       76  qspi.o(.bss)
+    .constdata                               0x2400a3f4   Section      200  dev_inf.o(.constdata)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPv5_D16$PE$PLD8$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$RWPI$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __asm___12_Loader_Src_c_Init____REV16    0x24000005   Thumb Code     4  loader_src.o(.rev16_text)
+    __asm___5_bsp_c_2a3ab6ca____REV16        0x24000009   Thumb Code     4  bsp.o(.rev16_text)
+    __asm___6_qspi_c_aad5ee93____REV16       0x2400000d   Thumb Code     4  qspi.o(.rev16_text)
+    __asm___15_stm32h7xx_hal_c_3da258af____REV16 0x24000011   Thumb Code     4  stm32h7xx_hal.o(.rev16_text)
+    __asm___22_stm32h7xx_hal_cortex_c_2992dbc0____REV16 0x24000015   Thumb Code     4  stm32h7xx_hal_cortex.o(.rev16_text)
+    __asm___20_stm32h7xx_hal_gpio_c_ea787061____REV16 0x24000019   Thumb Code     4  stm32h7xx_hal_gpio.o(.rev16_text)
+    __asm___20_stm32h7xx_hal_qspi_c_9f327679____REV16 0x2400001d   Thumb Code     4  stm32h7xx_hal_qspi.o(.rev16_text)
+    __asm___19_stm32h7xx_hal_rcc_c_b7071a4b____REV16 0x24000021   Thumb Code     4  stm32h7xx_hal_rcc.o(.rev16_text)
+    __asm___22_stm32h7xx_hal_rcc_ex_c_bed13b44____REV16 0x24000025   Thumb Code     4  stm32h7xx_hal_rcc_ex.o(.rev16_text)
+    __asm___20_stm32h7xx_hal_mdma_c_49e2804d____REV16 0x24000029   Thumb Code     4  stm32h7xx_hal_mdma.o(.rev16_text)
+    __asm___22_stm32h7xx_hal_pwr_ex_c_75a25fd4____REV16 0x2400002d   Thumb Code     4  stm32h7xx_hal_pwr_ex.o(.rev16_text)
+    __asm___19_stm32h7xx_hal_pwr_c_f2cfe8be____REV16 0x24000031   Thumb Code     4  stm32h7xx_hal_pwr.o(.rev16_text)
+    __asm___18_system_stm32h7xx_c_5d646a67____REV16 0x24000035   Thumb Code     4  system_stm32h7xx.o(.rev16_text)
+    __asm___12_Loader_Src_c_Init____REVSH    0x24000039   Thumb Code     4  loader_src.o(.revsh_text)
+    __asm___5_bsp_c_2a3ab6ca____REVSH        0x2400003d   Thumb Code     4  bsp.o(.revsh_text)
+    __asm___6_qspi_c_aad5ee93____REVSH       0x24000041   Thumb Code     4  qspi.o(.revsh_text)
+    __asm___15_stm32h7xx_hal_c_3da258af____REVSH 0x24000045   Thumb Code     4  stm32h7xx_hal.o(.revsh_text)
+    __asm___22_stm32h7xx_hal_cortex_c_2992dbc0____REVSH 0x24000049   Thumb Code     4  stm32h7xx_hal_cortex.o(.revsh_text)
+    __asm___20_stm32h7xx_hal_gpio_c_ea787061____REVSH 0x2400004d   Thumb Code     4  stm32h7xx_hal_gpio.o(.revsh_text)
+    __asm___20_stm32h7xx_hal_qspi_c_9f327679____REVSH 0x24000051   Thumb Code     4  stm32h7xx_hal_qspi.o(.revsh_text)
+    __asm___19_stm32h7xx_hal_rcc_c_b7071a4b____REVSH 0x24000055   Thumb Code     4  stm32h7xx_hal_rcc.o(.revsh_text)
+    __asm___22_stm32h7xx_hal_rcc_ex_c_bed13b44____REVSH 0x24000059   Thumb Code     4  stm32h7xx_hal_rcc_ex.o(.revsh_text)
+    __asm___20_stm32h7xx_hal_mdma_c_49e2804d____REVSH 0x2400005d   Thumb Code     4  stm32h7xx_hal_mdma.o(.revsh_text)
+    __asm___22_stm32h7xx_hal_pwr_ex_c_75a25fd4____REVSH 0x24000061   Thumb Code     4  stm32h7xx_hal_pwr_ex.o(.revsh_text)
+    __asm___19_stm32h7xx_hal_pwr_c_f2cfe8be____REVSH 0x24000065   Thumb Code     4  stm32h7xx_hal_pwr.o(.revsh_text)
+    __asm___18_system_stm32h7xx_c_5d646a67____REVSH 0x24000069   Thumb Code     4  system_stm32h7xx.o(.revsh_text)
+    __asm___12_Loader_Src_c_Init____RRX      0x2400006d   Thumb Code     6  loader_src.o(.rrx_text)
+    __asm___5_bsp_c_2a3ab6ca____RRX          0x24000075   Thumb Code     6  bsp.o(.rrx_text)
+    __asm___6_qspi_c_aad5ee93____RRX         0x2400007d   Thumb Code     6  qspi.o(.rrx_text)
+    __asm___15_stm32h7xx_hal_c_3da258af____RRX 0x24000085   Thumb Code     6  stm32h7xx_hal.o(.rrx_text)
+    __asm___22_stm32h7xx_hal_cortex_c_2992dbc0____RRX 0x2400008d   Thumb Code     6  stm32h7xx_hal_cortex.o(.rrx_text)
+    __asm___20_stm32h7xx_hal_gpio_c_ea787061____RRX 0x24000095   Thumb Code     6  stm32h7xx_hal_gpio.o(.rrx_text)
+    __asm___20_stm32h7xx_hal_qspi_c_9f327679____RRX 0x2400009d   Thumb Code     6  stm32h7xx_hal_qspi.o(.rrx_text)
+    __asm___19_stm32h7xx_hal_rcc_c_b7071a4b____RRX 0x240000a5   Thumb Code     6  stm32h7xx_hal_rcc.o(.rrx_text)
+    __asm___22_stm32h7xx_hal_rcc_ex_c_bed13b44____RRX 0x240000ad   Thumb Code     6  stm32h7xx_hal_rcc_ex.o(.rrx_text)
+    __asm___20_stm32h7xx_hal_mdma_c_49e2804d____RRX 0x240000b5   Thumb Code     6  stm32h7xx_hal_mdma.o(.rrx_text)
+    __asm___22_stm32h7xx_hal_pwr_ex_c_75a25fd4____RRX 0x240000bd   Thumb Code     6  stm32h7xx_hal_pwr_ex.o(.rrx_text)
+    __asm___19_stm32h7xx_hal_pwr_c_f2cfe8be____RRX 0x240000c5   Thumb Code     6  stm32h7xx_hal_pwr.o(.rrx_text)
+    __asm___18_system_stm32h7xx_c_5d646a67____RRX 0x240000cd   Thumb Code     6  system_stm32h7xx.o(.rrx_text)
+    Init                                     0x240000d5   Thumb Code   210  loader_src.o(.text)
+    Write                                    0x240001a7   Thumb Code    80  loader_src.o(.text)
+    SectorErase                              0x240001f7   Thumb Code    92  loader_src.o(.text)
+    MassErase                                0x24000253   Thumb Code    42  loader_src.o(.text)
+    HAL_InitTick                             0x24000289   Thumb Code     6  bsp.o(.text)
+    SystemClock_Config                       0x2400028f   Thumb Code   172  bsp.o(.text)
+    Error_Handler                            0x24000345   Thumb Code     6  qspi.o(.text)
+    MX_QUADSPI_Init                          0x2400034b   Thumb Code    90  qspi.o(.text)
+    HAL_QSPI_MspInit                         0x240003a5   Thumb Code   412  qspi.o(.text)
+    HAL_QSPI_MspDeInit                       0x24000541   Thumb Code    68  qspi.o(.text)
+    QSPI_EnableMemoryMappedMode              0x24000585   Thumb Code    68  qspi.o(.text)
+    QSPI_FLASH_ReadStatusReg                 0x2400061f   Thumb Code   140  qspi.o(.text)
+    QSPI_FLASH_Wait_Busy                     0x240006ab   Thumb Code    28  qspi.o(.text)
+    QSPI_EnterFourBytesAddress               0x24000759   Thumb Code    74  qspi.o(.text)
+    BSP_QSPI_Init                            0x24000801   Thumb Code   130  qspi.o(.text)
+    BSP_QSPI_Read                            0x24000883   Thumb Code   108  qspi.o(.text)
+    BSP_QSPI_FastRead                        0x240008ef   Thumb Code   108  qspi.o(.text)
+    BSP_QSPI_Write                           0x2400095b   Thumb Code   198  qspi.o(.text)
+    BSP_QSPI_Erase_Sector                    0x24000a21   Thumb Code    92  qspi.o(.text)
+    BSP_QSPI_Erase_Block32                   0x24000a7d   Thumb Code    94  qspi.o(.text)
+    BSP_QSPI_Erase_Block64                   0x24000adb   Thumb Code    94  qspi.o(.text)
+    BSP_QSPI_Erase_Chip                      0x24000b39   Thumb Code    84  qspi.o(.text)
+    BSP_QSPI_GetStatus                       0x24000b8d   Thumb Code   102  qspi.o(.text)
+    BSP_QSPI_GetInfo                         0x24000bf3   Thumb Code    28  qspi.o(.text)
+    QSPI_FLASH_ReadID                        0x24000c0f   Thumb Code   120  qspi.o(.text)
+    QSPI_FLASH_ReadDeviceID                  0x24000c87   Thumb Code   136  qspi.o(.text)
+    QSPI_FLASH_WriteStatusReg                0x24000d0f   Thumb Code   142  qspi.o(.text)
+    QSPI_Set_WP_High                         0x24000d9d   Thumb Code    68  qspi.o(.text)
+    QSPI_Set_WP_TO_QSPI_IO                   0x24000de1   Thumb Code    64  qspi.o(.text)
+    assert_failed                            0x24000e21   Thumb Code     2  qspi.o(.text)
+    HAL_MspInit                              0x24000e35   Thumb Code     2  stm32h7xx_hal.o(.text)
+    HAL_Init                                 0x24000e89   Thumb Code    86  stm32h7xx_hal.o(.text)
+    HAL_MspDeInit                            0x24000edf   Thumb Code     2  stm32h7xx_hal.o(.text)
+    HAL_DeInit                               0x24000ee1   Thumb Code   106  stm32h7xx_hal.o(.text)
+    HAL_IncTick                              0x24000f4b   Thumb Code    22  stm32h7xx_hal.o(.text)
+    HAL_GetTick                              0x24000f61   Thumb Code     8  stm32h7xx_hal.o(.text)
+    HAL_GetTickPrio                          0x24000f69   Thumb Code     8  stm32h7xx_hal.o(.text)
+    HAL_SetTickFreq                          0x24000f71   Thumb Code    72  stm32h7xx_hal.o(.text)
+    HAL_GetTickFreq                          0x24000fb9   Thumb Code     8  stm32h7xx_hal.o(.text)
+    HAL_Delay                                0x24000fc1   Thumb Code    38  stm32h7xx_hal.o(.text)
+    HAL_SuspendTick                          0x24000fe7   Thumb Code    18  stm32h7xx_hal.o(.text)
+    HAL_ResumeTick                           0x24000ff9   Thumb Code    18  stm32h7xx_hal.o(.text)
+    HAL_GetHalVersion                        0x2400100b   Thumb Code     4  stm32h7xx_hal.o(.text)
+    HAL_GetREVID                             0x2400100f   Thumb Code     8  stm32h7xx_hal.o(.text)
+    HAL_GetDEVID                             0x24001017   Thumb Code    10  stm32h7xx_hal.o(.text)
+    HAL_GetUIDw0                             0x24001021   Thumb Code     6  stm32h7xx_hal.o(.text)
+    HAL_GetUIDw1                             0x24001027   Thumb Code     8  stm32h7xx_hal.o(.text)
+    HAL_GetUIDw2                             0x2400102f   Thumb Code     8  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_VREFBUF_VoltageScalingConfig  0x24001037   Thumb Code    46  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_VREFBUF_HighImpedanceConfig   0x24001065   Thumb Code    38  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_VREFBUF_TrimmingConfig        0x2400108b   Thumb Code    42  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_EnableVREFBUF                 0x240010b5   Thumb Code    52  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_DisableVREFBUF                0x240010e9   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_ETHInterfaceSelect            0x240010f7   Thumb Code    40  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_AnalogSwitchConfig            0x2400111f   Thumb Code   140  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_EnableBOOST                   0x240011ab   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_DisableBOOST                  0x240011b9   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_CM7BootAddConfig              0x240011c7   Thumb Code   218  stm32h7xx_hal.o(.text)
+    HAL_EnableCompensationCell               0x240012a1   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_DisableCompensationCell              0x240012af   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_EnableIOSpeedOptimize         0x240012bd   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_DisableIOSpeedOptimize        0x240012cb   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_CompensationCodeSelect        0x240012d9   Thumb Code    40  stm32h7xx_hal.o(.text)
+    HAL_SYSCFG_CompensationCodeConfig        0x24001301   Thumb Code    66  stm32h7xx_hal.o(.text)
+    HAL_DBGMCU_EnableDBGSleepMode            0x24001343   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_DBGMCU_DisableDBGSleepMode           0x24001351   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_DBGMCU_EnableDBGStopMode             0x2400135f   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_DBGMCU_DisableDBGStopMode            0x2400136d   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_DBGMCU_EnableDBGStandbyMode          0x2400137b   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_DBGMCU_DisableDBGStandbyMode         0x24001389   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_EnableDomain3DBGStopMode             0x24001397   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_DisableDomain3DBGStopMode            0x240013a5   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_EnableDomain3DBGStandbyMode          0x240013b3   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_DisableDomain3DBGStandbyMode         0x240013c1   Thumb Code    14  stm32h7xx_hal.o(.text)
+    HAL_SetFMCMemorySwappingConfig           0x240013cf   Thumb Code    48  stm32h7xx_hal.o(.text)
+    HAL_GetFMCMemorySwappingConfig           0x240013ff   Thumb Code    10  stm32h7xx_hal.o(.text)
+    HAL_EXTI_EdgeConfig                      0x24001409   Thumb Code   290  stm32h7xx_hal.o(.text)
+    HAL_EXTI_GenerateSWInterrupt             0x2400152b   Thumb Code   152  stm32h7xx_hal.o(.text)
+    HAL_EXTI_D1_ClearFlag                    0x240015c3   Thumb Code   384  stm32h7xx_hal.o(.text)
+    HAL_EXTI_D1_EventInputConfig             0x24001743   Thumb Code   546  stm32h7xx_hal.o(.text)
+    HAL_EXTI_D3_EventInputConfig             0x24001965   Thumb Code   292  stm32h7xx_hal.o(.text)
+    HAL_NVIC_SetPriorityGrouping             0x24001aad   Thumb Code    70  stm32h7xx_hal_cortex.o(.text)
+    HAL_NVIC_SetPriority                     0x24001af3   Thumb Code   150  stm32h7xx_hal_cortex.o(.text)
+    HAL_NVIC_EnableIRQ                       0x24001b89   Thumb Code    56  stm32h7xx_hal_cortex.o(.text)
+    HAL_NVIC_DisableIRQ                      0x24001bc1   Thumb Code    52  stm32h7xx_hal_cortex.o(.text)
+    HAL_NVIC_SystemReset                     0x24001bf5   Thumb Code    40  stm32h7xx_hal_cortex.o(.text)
+    HAL_SYSTICK_Config                       0x24001c1d   Thumb Code    52  stm32h7xx_hal_cortex.o(.text)
+    HAL_MPU_Disable                          0x24001c51   Thumb Code    30  stm32h7xx_hal_cortex.o(.text)
+    HAL_MPU_Enable                           0x24001c6f   Thumb Code    36  stm32h7xx_hal_cortex.o(.text)
+    HAL_MPU_ConfigRegion                     0x24001c93   Thumb Code   670  stm32h7xx_hal_cortex.o(.text)
+    HAL_NVIC_GetPriorityGrouping             0x24001f31   Thumb Code     8  stm32h7xx_hal_cortex.o(.text)
+    HAL_NVIC_GetPriority                     0x24001f39   Thumb Code   180  stm32h7xx_hal_cortex.o(.text)
+    HAL_NVIC_SetPendingIRQ                   0x24001fed   Thumb Code    48  stm32h7xx_hal_cortex.o(.text)
+    HAL_NVIC_GetPendingIRQ                   0x2400201d   Thumb Code    62  stm32h7xx_hal_cortex.o(.text)
+    HAL_NVIC_ClearPendingIRQ                 0x2400205b   Thumb Code    50  stm32h7xx_hal_cortex.o(.text)
+    HAL_NVIC_GetActive                       0x2400208d   Thumb Code    62  stm32h7xx_hal_cortex.o(.text)
+    HAL_SYSTICK_CLKSourceConfig              0x240020cb   Thumb Code    64  stm32h7xx_hal_cortex.o(.text)
+    HAL_SYSTICK_Callback                     0x2400210b   Thumb Code     2  stm32h7xx_hal_cortex.o(.text)
+    HAL_SYSTICK_IRQHandler                   0x2400210d   Thumb Code     8  stm32h7xx_hal_cortex.o(.text)
+    HAL_GetCurrentCPUID                      0x24002115   Thumb Code     4  stm32h7xx_hal_cortex.o(.text)
+    HAL_GPIO_Init                            0x24002135   Thumb Code   834  stm32h7xx_hal_gpio.o(.text)
+    HAL_GPIO_DeInit                          0x24002477   Thumb Code   548  stm32h7xx_hal_gpio.o(.text)
+    HAL_GPIO_ReadPin                         0x2400269b   Thumb Code    46  stm32h7xx_hal_gpio.o(.text)
+    HAL_GPIO_WritePin                        0x240026c9   Thumb Code    64  stm32h7xx_hal_gpio.o(.text)
+    HAL_GPIO_TogglePin                       0x24002709   Thumb Code    48  stm32h7xx_hal_gpio.o(.text)
+    HAL_GPIO_LockPin                         0x24002739   Thumb Code   152  stm32h7xx_hal_gpio.o(.text)
+    HAL_GPIO_EXTI_Callback                   0x240027d1   Thumb Code     2  stm32h7xx_hal_gpio.o(.text)
+    HAL_GPIO_EXTI_IRQHandler                 0x240027d3   Thumb Code    24  stm32h7xx_hal_gpio.o(.text)
+    HAL_QSPI_SetTimeout                      0x2400283f   Thumb Code     4  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_Init                            0x24002845   Thumb Code   404  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_DeInit                          0x240029db   Thumb Code    40  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_Command                         0x24002c11   Thumb Code   606  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_Command_IT                      0x24002e6f   Thumb Code   544  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_Transmit                        0x2400308f   Thumb Code   212  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_Receive                         0x24003163   Thumb Code   228  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_Transmit_IT                     0x24003247   Thumb Code   144  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_Receive_IT                      0x240032d7   Thumb Code   156  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_AutoPolling                     0x24003373   Thumb Code   638  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_AutoPolling_IT                  0x240035f1   Thumb Code   668  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_MemoryMapped                    0x2400388d   Thumb Code   582  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_ErrorCallback                   0x24003ad3   Thumb Code     2  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_AbortCpltCallback               0x24003ad5   Thumb Code     2  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_CmdCpltCallback                 0x24003ad7   Thumb Code     2  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_RxCpltCallback                  0x24003ad9   Thumb Code     2  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_TxCpltCallback                  0x24003adb   Thumb Code     2  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_FifoThresholdCallback           0x24003add   Thumb Code     2  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_StatusMatchCallback             0x24003adf   Thumb Code     2  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_TimeOutCallback                 0x24003ae1   Thumb Code     2  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_GetState                        0x24003ae3   Thumb Code     8  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_GetError                        0x24003aeb   Thumb Code     6  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_Abort                           0x24003af1   Thumb Code   112  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_SetFifoThreshold                0x24003b61   Thumb Code    76  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_GetFifoThreshold                0x24003bad   Thumb Code    14  stm32h7xx_hal_qspi.o(.text)
+    HAL_QSPI_SetFlashID                      0x24003bbb   Thumb Code    92  stm32h7xx_hal_qspi.o(.text)
+    HAL_RCC_DeInit                           0x24003c19   Thumb Code   522  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCC_OscConfig                        0x24003e23   Thumb Code  2686  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCC_GetSysClockFreq                  0x240048a1   Thumb Code   524  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCC_ClockConfig                      0x24004aad   Thumb Code  1632  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCC_MCOConfig                        0x2400510d   Thumb Code   386  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCC_EnableCSS                        0x2400528f   Thumb Code    18  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCC_DisableCSS                       0x240052a1   Thumb Code    18  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCC_GetHCLKFreq                      0x240052b3   Thumb Code    70  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCC_GetPCLK1Freq                     0x240052f9   Thumb Code    32  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCC_GetPCLK2Freq                     0x24005319   Thumb Code    32  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCC_GetOscConfig                     0x24005339   Thumb Code   414  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCC_GetClockConfig                   0x240054d7   Thumb Code   100  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCC_CSSCallback                      0x2400553b   Thumb Code     2  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCC_NMI_IRQHandler                   0x2400553d   Thumb Code    34  stm32h7xx_hal_rcc.o(.text)
+    HAL_RCCEx_PeriphCLKConfig                0x24005a0d   Thumb Code  4084  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_GetPeriphCLKConfig             0x24006a01   Thumb Code   676  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_GetPLL2ClockFreq               0x24006ca5   Thumb Code   540  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_GetPLL1ClockFreq               0x24006ec1   Thumb Code   554  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_GetPLL3ClockFreq               0x240070eb   Thumb Code   540  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_GetD3PCLK1Freq                 0x24007307   Thumb Code    30  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_GetPeriphCLKFreq               0x24007325   Thumb Code  1824  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_GetD1PCLK1Freq                 0x24007a45   Thumb Code    30  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_GetD1SysClockFreq              0x24007a63   Thumb Code    70  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_EnableLSECSS                   0x24007aa9   Thumb Code    18  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_DisableLSECSS                  0x24007abb   Thumb Code    34  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_EnableLSECSS_IT                0x24007add   Thumb Code    60  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_WakeUpStopCLKConfig            0x24007b19   Thumb Code    42  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_KerWakeUpStopCLKConfig         0x24007b43   Thumb Code    42  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_WWDGxSysResetConfig            0x24007b6d   Thumb Code   136  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_CRSConfig                      0x24007bf5   Thumb Code   318  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_CRSSoftwareSynchronizationGenerate 0x24007d33   Thumb Code    18  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_CRSGetSynchronizationInfo      0x24007d45   Thumb Code    64  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_CRSWaitSynchronization         0x24007d85   Thumb Code   216  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_CRS_ErrorCallback              0x24007e5d   Thumb Code     2  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_CRS_ExpectedSyncCallback       0x24007e5f   Thumb Code     2  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_CRS_SyncWarnCallback           0x24007e61   Thumb Code     2  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_CRS_SyncOkCallback             0x24007e63   Thumb Code     2  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_CRS_IRQHandler                 0x24007e65   Thumb Code   152  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_LSECSS_Callback                0x24007efd   Thumb Code     2  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_RCCEx_LSECSS_IRQHandler              0x24007eff   Thumb Code    34  stm32h7xx_hal_rcc_ex.o(.text)
+    HAL_MDMA_Init                            0x24007fed   Thumb Code   884  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_DeInit                          0x24008361   Thumb Code    94  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_ConfigPostRequestMask           0x240083bf   Thumb Code   194  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_RegisterCallback                0x24008481   Thumb Code   100  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_UnRegisterCallback              0x240084e5   Thumb Code   130  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_LinkedList_CreateNode           0x24008567   Thumb Code   994  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_LinkedList_AddNode              0x24008949   Thumb Code   228  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_LinkedList_RemoveNode           0x24008a2d   Thumb Code   216  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_LinkedList_EnableCircularMode   0x24008b05   Thumb Code    88  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_LinkedList_DisableCircularMode  0x24008b5d   Thumb Code    88  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_Start                           0x24008c37   Thumb Code   190  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_Start_IT                        0x24008cf5   Thumb Code   244  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_Abort                           0x24008de9   Thumb Code   144  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_Abort_IT                        0x24008e79   Thumb Code    46  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_PollForTransfer                 0x24008ea7   Thumb Code   320  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_GenerateSWRequest               0x24008fe7   Thumb Code    72  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_IRQHandler                      0x2400902f   Thumb Code   478  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_GetState                        0x2400920d   Thumb Code     8  stm32h7xx_hal_mdma.o(.text)
+    HAL_MDMA_GetError                        0x24009215   Thumb Code     6  stm32h7xx_hal_mdma.o(.text)
+    HAL_PWREx_ConfigSupply                   0x24009221   Thumb Code   110  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_GetSupplyConfig                0x2400928f   Thumb Code    10  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_ControlVoltageScaling          0x24009299   Thumb Code   276  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_GetVoltageRange                0x240093ad   Thumb Code    12  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_ControlStopModeVoltageScaling  0x240093b9   Thumb Code    56  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_GetStopModeVoltageRange        0x240093f1   Thumb Code    12  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_EnterSTOPMode                  0x240093fd   Thumb Code   188  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_ClearPendingEvent              0x240094b9   Thumb Code     4  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_EnterSTANDBYMode               0x240094bd   Thumb Code   104  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_ConfigD3Domain                 0x24009525   Thumb Code    44  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_EnableFlashPowerDown           0x24009551   Thumb Code    18  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_DisableFlashPowerDown          0x24009563   Thumb Code    18  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_EnableWakeUpPin                0x24009575   Thumb Code   414  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_DisableWakeUpPin               0x24009713   Thumb Code   116  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_GetWakeupFlag                  0x24009787   Thumb Code    56  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_ClearWakeupFlag                0x240097bf   Thumb Code    76  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_WKUP6_Callback                 0x2400980b   Thumb Code     2  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_WKUP5_Callback                 0x2400980d   Thumb Code     2  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_WKUP4_Callback                 0x2400980f   Thumb Code     2  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_WKUP3_Callback                 0x24009811   Thumb Code     2  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_WKUP2_Callback                 0x24009813   Thumb Code     2  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_WKUP1_Callback                 0x24009815   Thumb Code     2  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_WAKEUP_PIN_IRQHandler          0x24009817   Thumb Code   194  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_EnableBkUpReg                  0x240098d9   Thumb Code    60  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_DisableBkUpReg                 0x24009915   Thumb Code    60  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_EnableUSBReg                   0x24009951   Thumb Code    60  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_DisableUSBReg                  0x2400998d   Thumb Code    60  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_EnableUSBVoltageDetector       0x240099c9   Thumb Code    18  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_DisableUSBVoltageDetector      0x240099db   Thumb Code    18  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_EnableBatteryCharging          0x240099ed   Thumb Code    56  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_DisableBatteryCharging         0x24009a25   Thumb Code    18  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_EnableMonitoring               0x24009a37   Thumb Code    18  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_DisableMonitoring              0x24009a49   Thumb Code    18  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_GetTemperatureLevel            0x24009a5b   Thumb Code    38  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_GetVBATLevel                   0x24009a81   Thumb Code    38  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_ConfigAVD                      0x24009aa7   Thumb Code   298  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_EnableAVD                      0x24009bd1   Thumb Code    14  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_DisableAVD                     0x24009bdf   Thumb Code    14  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_AVDCallback                    0x24009bed   Thumb Code     2  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWREx_PVD_AVD_IRQHandler             0x24009bef   Thumb Code    92  stm32h7xx_hal_pwr_ex.o(.text)
+    HAL_PWR_DeInit                           0x24009c59   Thumb Code     2  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_EnableBkUpAccess                 0x24009c5b   Thumb Code    14  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_DisableBkUpAccess                0x24009c69   Thumb Code    14  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_ConfigPVD                        0x24009c77   Thumb Code   304  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_EnablePVD                        0x24009da7   Thumb Code    14  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_DisablePVD                       0x24009db5   Thumb Code    14  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_EnableWakeUpPin                  0x24009dc3   Thumb Code   122  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_DisableWakeUpPin                 0x24009e3d   Thumb Code   122  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_EnterSLEEPMode                   0x24009eb7   Thumb Code    68  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_EnterSTOPMode                    0x24009efb   Thumb Code   128  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_EnterSTANDBYMode                 0x24009f7b   Thumb Code    54  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_EnableSleepOnExit                0x24009fb1   Thumb Code    14  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_DisableSleepOnExit               0x24009fbf   Thumb Code    14  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_EnableSEVOnPend                  0x24009fcd   Thumb Code    14  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_DisableSEVOnPend                 0x24009fdb   Thumb Code    14  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_PVDCallback                      0x24009fe9   Thumb Code     2  stm32h7xx_hal_pwr.o(.text)
+    HAL_PWR_PVD_IRQHandler                   0x24009feb   Thumb Code    38  stm32h7xx_hal_pwr.o(.text)
+    SystemInit                               0x2400a069   Thumb Code   220  system_stm32h7xx.o(.text)
+    SystemCoreClockUpdate                    0x2400a145   Thumb Code   492  system_stm32h7xx.o(.text)
+    __aeabi_memclr4                          0x2400a37d   Thumb Code     0  rt_memclr_w.o(.text)
+    __aeabi_memclr8                          0x2400a37d   Thumb Code     0  rt_memclr_w.o(.text)
+    __rt_memclr_w                            0x2400a37d   Thumb Code    78  rt_memclr_w.o(.text)
+    _memset_w                                0x2400a381   Thumb Code     0  rt_memclr_w.o(.text)
+    D1CorePrescTable                         0x2400a3ca   Data          16  system_stm32h7xx.o(.constdata)
+    uwTick                                   0x2400a3e0   Data           4  stm32h7xx_hal.o(.data)
+    uwTickPrio                               0x2400a3e4   Data           4  stm32h7xx_hal.o(.data)
+    uwTickFreq                               0x2400a3e8   Data           1  stm32h7xx_hal.o(.data)
+    SystemCoreClock                          0x2400a3ec   Data           4  system_stm32h7xx.o(.data)
+    SystemD2Clock                            0x2400a3f0   Data           4  system_stm32h7xx.o(.data)
+    StorageInfo                              0x2400a3f4   Data         200  dev_inf.o(.constdata)
+    hqspi                                    0x2400a3f4   Data          76  qspi.o(.bss)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image entry point : Not specified.
+
+  Load Region FLASH_LOADER (Base: 0x24000004, Size: 0x0000a3f0, Max: 0xffffffff, PI)
+
+    Execution Region PrgCode (Exec base: 0x24000004, Load base: 0x24000004, Size: 0x0000a3d8, Max: 0xffffffff, PI)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x24000004   0x24000004   0x00000004   Code   RO            1    .rev16_text         loader_src.o
+    0x24000008   0x24000008   0x00000004   Code   RO          148    .rev16_text         bsp.o
+    0x2400000c   0x2400000c   0x00000004   Code   RO          172    .rev16_text         qspi.o
+    0x24000010   0x24000010   0x00000004   Code   RO          205    .rev16_text         stm32h7xx_hal.o
+    0x24000014   0x24000014   0x00000004   Code   RO          235    .rev16_text         stm32h7xx_hal_cortex.o
+    0x24000018   0x24000018   0x00000004   Code   RO          263    .rev16_text         stm32h7xx_hal_gpio.o
+    0x2400001c   0x2400001c   0x00000004   Code   RO          287    .rev16_text         stm32h7xx_hal_qspi.o
+    0x24000020   0x24000020   0x00000004   Code   RO          311    .rev16_text         stm32h7xx_hal_rcc.o
+    0x24000024   0x24000024   0x00000004   Code   RO          335    .rev16_text         stm32h7xx_hal_rcc_ex.o
+    0x24000028   0x24000028   0x00000004   Code   RO          359    .rev16_text         stm32h7xx_hal_mdma.o
+    0x2400002c   0x2400002c   0x00000004   Code   RO          383    .rev16_text         stm32h7xx_hal_pwr_ex.o
+    0x24000030   0x24000030   0x00000004   Code   RO          407    .rev16_text         stm32h7xx_hal_pwr.o
+    0x24000034   0x24000034   0x00000004   Code   RO          431    .rev16_text         system_stm32h7xx.o
+    0x24000038   0x24000038   0x00000004   Code   RO            2    .revsh_text         loader_src.o
+    0x2400003c   0x2400003c   0x00000004   Code   RO          149    .revsh_text         bsp.o
+    0x24000040   0x24000040   0x00000004   Code   RO          173    .revsh_text         qspi.o
+    0x24000044   0x24000044   0x00000004   Code   RO          206    .revsh_text         stm32h7xx_hal.o
+    0x24000048   0x24000048   0x00000004   Code   RO          236    .revsh_text         stm32h7xx_hal_cortex.o
+    0x2400004c   0x2400004c   0x00000004   Code   RO          264    .revsh_text         stm32h7xx_hal_gpio.o
+    0x24000050   0x24000050   0x00000004   Code   RO          288    .revsh_text         stm32h7xx_hal_qspi.o
+    0x24000054   0x24000054   0x00000004   Code   RO          312    .revsh_text         stm32h7xx_hal_rcc.o
+    0x24000058   0x24000058   0x00000004   Code   RO          336    .revsh_text         stm32h7xx_hal_rcc_ex.o
+    0x2400005c   0x2400005c   0x00000004   Code   RO          360    .revsh_text         stm32h7xx_hal_mdma.o
+    0x24000060   0x24000060   0x00000004   Code   RO          384    .revsh_text         stm32h7xx_hal_pwr_ex.o
+    0x24000064   0x24000064   0x00000004   Code   RO          408    .revsh_text         stm32h7xx_hal_pwr.o
+    0x24000068   0x24000068   0x00000004   Code   RO          432    .revsh_text         system_stm32h7xx.o
+    0x2400006c   0x2400006c   0x00000006   Code   RO            3    .rrx_text           loader_src.o
+    0x24000072   0x24000072   0x00000002   PAD
+    0x24000074   0x24000074   0x00000006   Code   RO          150    .rrx_text           bsp.o
+    0x2400007a   0x2400007a   0x00000002   PAD
+    0x2400007c   0x2400007c   0x00000006   Code   RO          174    .rrx_text           qspi.o
+    0x24000082   0x24000082   0x00000002   PAD
+    0x24000084   0x24000084   0x00000006   Code   RO          207    .rrx_text           stm32h7xx_hal.o
+    0x2400008a   0x2400008a   0x00000002   PAD
+    0x2400008c   0x2400008c   0x00000006   Code   RO          237    .rrx_text           stm32h7xx_hal_cortex.o
+    0x24000092   0x24000092   0x00000002   PAD
+    0x24000094   0x24000094   0x00000006   Code   RO          265    .rrx_text           stm32h7xx_hal_gpio.o
+    0x2400009a   0x2400009a   0x00000002   PAD
+    0x2400009c   0x2400009c   0x00000006   Code   RO          289    .rrx_text           stm32h7xx_hal_qspi.o
+    0x240000a2   0x240000a2   0x00000002   PAD
+    0x240000a4   0x240000a4   0x00000006   Code   RO          313    .rrx_text           stm32h7xx_hal_rcc.o
+    0x240000aa   0x240000aa   0x00000002   PAD
+    0x240000ac   0x240000ac   0x00000006   Code   RO          337    .rrx_text           stm32h7xx_hal_rcc_ex.o
+    0x240000b2   0x240000b2   0x00000002   PAD
+    0x240000b4   0x240000b4   0x00000006   Code   RO          361    .rrx_text           stm32h7xx_hal_mdma.o
+    0x240000ba   0x240000ba   0x00000002   PAD
+    0x240000bc   0x240000bc   0x00000006   Code   RO          385    .rrx_text           stm32h7xx_hal_pwr_ex.o
+    0x240000c2   0x240000c2   0x00000002   PAD
+    0x240000c4   0x240000c4   0x00000006   Code   RO          409    .rrx_text           stm32h7xx_hal_pwr.o
+    0x240000ca   0x240000ca   0x00000002   PAD
+    0x240000cc   0x240000cc   0x00000006   Code   RO          433    .rrx_text           system_stm32h7xx.o
+    0x240000d2   0x240000d2   0x00000002   PAD
+    0x240000d4   0x240000d4   0x000001b4   Code   RO            4    .text               loader_src.o
+    0x24000288   0x24000288   0x000000bc   Code   RO          151    .text               bsp.o
+    0x24000344   0x24000344   0x00000af0   Code   RO          175    .text               qspi.o
+    0x24000e34   0x24000e34   0x00000c58   Code   RO          208    .text               stm32h7xx_hal.o
+    0x24001a8c   0x24001a8c   0x000006a8   Code   RO          238    .text               stm32h7xx_hal_cortex.o
+    0x24002134   0x24002134   0x000006ec   Code   RO          266    .text               stm32h7xx_hal_gpio.o
+    0x24002820   0x24002820   0x000013f6   Code   RO          290    .text               stm32h7xx_hal_qspi.o
+    0x24003c16   0x24003c16   0x00000002   PAD
+    0x24003c18   0x24003c18   0x00001964   Code   RO          314    .text               stm32h7xx_hal_rcc.o
+    0x2400557c   0x2400557c   0x000029ac   Code   RO          338    .text               stm32h7xx_hal_rcc_ex.o
+    0x24007f28   0x24007f28   0x000012f8   Code   RO          362    .text               stm32h7xx_hal_mdma.o
+    0x24009220   0x24009220   0x00000a38   Code   RO          386    .text               stm32h7xx_hal_pwr_ex.o
+    0x24009c58   0x24009c58   0x00000410   Code   RO          410    .text               stm32h7xx_hal_pwr.o
+    0x2400a068   0x2400a068   0x00000314   Code   RO          434    .text               system_stm32h7xx.o
+    0x2400a37c   0x2400a37c   0x0000004e   Code   RO          464    .text               c_we.l(rt_memclr_w.o)
+    0x2400a3ca   0x2400a3ca   0x00000010   Data   RO          435    .constdata          system_stm32h7xx.o
+
+
+    Execution Region PrgData (Exec base: 0x2400a3dc, Load base: 0x2400a3dc, Size: 0x00000064, Max: 0xffffffff, PI)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x2400a3dc   0x2400a3dc   0x00000004   Data   RW          466    PDT$$ptr            anon$$obj.o
+    0x2400a3e0   0x2400a3e0   0x00000009   Data   RW          209    .data               stm32h7xx_hal.o
+    0x2400a3e9   0x2400a3e9   0x00000003   PAD
+    0x2400a3ec   0x2400a3ec   0x00000008   Data   RW          436    .data               system_stm32h7xx.o
+    0x2400a3f4        -       0x0000004c   Zero   RW          176    .bss                qspi.o
+
+
+
+  Load Region DEVICE_INFO (Base: 0x2400a3f4, Size: 0x000000c8, Max: 0xffffffff, PI)
+
+    Execution Region DevInfo (Exec base: 0x2400a3f4, Load base: 0x2400a3f4, Size: 0x000000c8, Max: 0xffffffff, PI)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x2400a3f4   0x2400a3f4   0x000000c8   Data   RO          136    .constdata          dev_inf.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       202         10          0          0          0       2886   bsp.o
+         0          0        200          0          0       1322   dev_inf.o
+       450         12          0          0          0    1224230   loader_src.o
+      2814         52          0          0         76      16032   qspi.o
+      3174        152          0          9          0      32453   stm32h7xx_hal.o
+      1718         98          0          0          0      43342   stm32h7xx_hal_cortex.o
+      1786        176          0          0          0       5643   stm32h7xx_hal_gpio.o
+      4870        106          0          0          0      12632   stm32h7xx_hal_mdma.o
+      1054         88          0          0          0       5843   stm32h7xx_hal_pwr.o
+      2630        102          0          0          0      11507   stm32h7xx_hal_pwr_ex.o
+      5124         78          0          0          0      13691   stm32h7xx_hal_qspi.o
+      6514        272          0          0          0       9811   stm32h7xx_hal_rcc.o
+     10682        542          0          0          0      14533   stm32h7xx_hal_rcc_ex.o
+       802         76         16          8          0       4128   system_stm32h7xx.o
+
+    ----------------------------------------------------------------------
+     41848       1764        218         24         76    1398053   Object Totals
+         0          0          0          4          0          0   (incl. Generated)
+        28          0          2          3          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+        78          0          0          0          0         76   rt_memclr_w.o
+
+    ----------------------------------------------------------------------
+        78          0          0          0          0         76   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+        78          0          0          0          0         76   c_we.l
+
+    ----------------------------------------------------------------------
+        78          0          0          0          0         76   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     41926       1764        218         24         76    1391281   Grand Totals
+     41926       1764        218         24         76    1391281   ELF Image Totals
+     41926       1764        218         24          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                42144 (  41.16kB)
+    Total RW  Size (RW Data + ZI Data)               100 (   0.10kB)
+    Total ROM Size (Code + RO Data + RW Data)      42168 (  41.18kB)
+
+==============================================================================
+
